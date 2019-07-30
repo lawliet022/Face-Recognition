@@ -66,5 +66,3 @@ np.save('face_01', data)
 # we run this program for each person and store their face data in
 # seperate files
 
-
-# zero shot detection

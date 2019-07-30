@@ -9,6 +9,9 @@ font = cv2.FONT_HERSHEY_SIMPLEX
 f_01 = np.load('face_01.npy').reshape((60,50*50*3))
 f_02 = np.load('face_02.npy').reshape((60,50*50*3))
 f_03 = np.load('face_03.npy').reshape((60,50*50*3))
+f_04 = np.load('face_04.npy').reshape((60,50*50*3))
+f_05 = np.load('face_05.npy').reshape((60,50*50*3))
+
 
 print f_01.shape
 
@@ -16,14 +19,19 @@ names = {
 	0 : 'Deepak',
 	1 : 'Kaustubh',
 	2 : 'Krishna',
+	3 : 'Chandrajeet',
+	4 : 'Prashant',
 }
 
-labels = np.zeros((180,1))
+labels = np.zeros((300,1))
 labels[:60, :] = 0.0
 labels[60:120, :] = 1.0
-labels[120:, :] = 2.0
+labels[120:180, :] = 2.0
+labels[180:240, :] = 3.0
+labels[240:, :] = 4.0
 
-data = np.concatenate([f_01,f_02,f_03])
+
+data = np.concatenate([f_01,f_02,f_03,f_04,f_05])
 
 print data.shape
 
